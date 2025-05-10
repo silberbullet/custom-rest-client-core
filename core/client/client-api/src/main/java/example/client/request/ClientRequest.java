@@ -11,7 +11,7 @@ import java.util.Objects;
  * @param path            요청할 경로 (예: "/comments/{id}")
  * @param body            요청할 본문 객체로 POST, PATCH, PUT 등의 사용 (null 허용)
  * @param responseType    응답을 매핑할 타입 클래스
- * @param unwrapKey        Wrap 형식의 JSON 역직렬화 키
+ * @param unwrapKey       Wrap 형식의 JSON 역직렬화 키
  * @param uriVariables    URI 경로 변수 (예: {id}에 들어갈 값들)
  * @param <T>             응답 타입 제네릭
  */
