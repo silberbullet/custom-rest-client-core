@@ -12,7 +12,8 @@ public final class StudentCommandDto {
     @Builder
     public record StudentCreateCommand(
             @NotBlank(message = "이름을 입력하십시오.")
-            String name
+            String name,
+            Long schoolId
     ) {
     }
 

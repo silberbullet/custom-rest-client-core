@@ -15,6 +15,8 @@ public class Student {
 
     private Long id;
 
+    private Long schoolId;
+
     private String name;
 
     private Instant createdAt;

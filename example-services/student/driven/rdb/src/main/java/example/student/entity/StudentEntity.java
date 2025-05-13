@@ -25,9 +25,11 @@ public class StudentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
+    private Long schoolId;
+
     private String name;
-    
+
     @CreatedDate
     private Instant createdAt;
     
