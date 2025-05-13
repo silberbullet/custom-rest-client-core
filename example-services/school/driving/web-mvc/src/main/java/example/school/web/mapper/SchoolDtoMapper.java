@@ -1,7 +1,7 @@
-package example.student.web.mapper;
+package example.school.web.mapper;
 
 import example.school.School;
-import example.student.web.dto.SchoolCommandDto.SchoolCreateCommand;
+import example.school.web.dto.SchoolCommandDto.SchoolCreateCommand;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")

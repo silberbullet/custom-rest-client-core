@@ -1,4 +1,4 @@
-package example.student.web.dto;
+package example.school.web.dto;
 
 import example.school.School;
 import jakarta.validation.constraints.NotBlank;

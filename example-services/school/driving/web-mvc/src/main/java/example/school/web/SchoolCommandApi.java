@@ -2,10 +2,10 @@ package example.school.web;
 
 import example.school.usecase.SchoolCreateUseCase;
 import example.school.usecase.SchoolUpdateUseCase;
-import example.student.web.dto.SchoolCommandDto.SchoolUpdateResponse;
-import example.student.web.dto.SchoolCommandDto.SchoolCreateCommand;
-import example.student.web.dto.SchoolCommandDto.SchoolCreateResponse;
-import example.student.web.mapper.SchoolDtoMapper;
+import example.school.web.dto.SchoolCommandDto.SchoolUpdateResponse;
+import example.school.web.dto.SchoolCommandDto.SchoolCreateCommand;
+import example.school.web.dto.SchoolCommandDto.SchoolCreateResponse;
+import example.school.web.mapper.SchoolDtoMapper;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
