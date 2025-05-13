@@ -20,6 +20,7 @@ include(
     ":student:student-application",
     ":student:student-rdb-adapter",
     ":student:student-webmvc-adapter",
+    ":student:student-school-rest-client-adapter",
 )
 
 project(":student").projectDir = student("student")
@@ -28,3 +29,4 @@ project(":student:student-domain").projectDir = student("domain")
 project(":student:student-application").projectDir = student("application")
 project(":student:student-rdb-adapter").projectDir = student("rdb")
 project(":student:student-webmvc-adapter").projectDir = student("web-mvc")
+project(":student:student-school-rest-client-adapter").projectDir = student("school")
