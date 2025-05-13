@@ -4,7 +4,7 @@ version = "0.0.1-SNAPSHOT"
 
 dependencies {
     // core
-
+    implementation(project(":custom-rest-client"))
     // service
     implementation(project(":school"))
     implementation(project(":student"))

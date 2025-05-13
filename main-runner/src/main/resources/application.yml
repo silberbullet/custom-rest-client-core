@@ -24,3 +24,8 @@ spring:
 server:
   port: 5000
 
+app:
+  client:
+    base-url: "http://localhost:5000"
+    url:
+      school: "http://localhost:5000"
