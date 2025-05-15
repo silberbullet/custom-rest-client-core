@@ -177,50 +177,50 @@ graph LR
     - 😊 기대 결과
       - 🧱 도메인 간 결합도를 낮춤 
         - 서로 직접 의존하지 않고, HTTP 인터페이스를 통한 느슨한 결합 구조를 형성합니다. 
-          - 🧩 모듈 간 순환 참조 방지 
-            - 각 도메인이 독립적으로 발전 가능하며, 순환 의존의 위험 없이 변경에 유연하게 대응할 수 있습니다.
-             ``` mermaid
-              graph TD
+      - 🧩 모듈 간 순환 참조 방지 
+        - 각 도메인이 독립적으로 발전 가능하며, 순환 의존의 위험 없이 변경에 유연하게 대응할 수 있습니다.
+         ``` mermaid
+          graph TD
           
-            %% 도메인별 애플리케이션 계층
-            subgraph Student Domain
-            student_app[student-application]
-            student_api[student-api]
-            student_school_rest_adapter[student-school-rest-client-adapter]
-            end
+        %% 도메인별 애플리케이션 계층
+        subgraph Student Domain
+        student_app[student-application]
+        student_api[student-api]
+        student_school_rest_adapter[student-school-rest-client-adapter]
+        end
             
-            subgraph School Domain
-            school_app[school-application]
-            school_api[school-api]
-            school_webmvc[school-webmvc-adapter]
-            end
+        subgraph School Domain
+        school_app[school-application]
+        school_api[school-api]
+        school_webmvc[school-webmvc-adapter]
+        end
             
-            subgraph Shared Domain
-            student[student-domain]
-            school[school-domain]
-            end
+        subgraph Shared Domain
+        student[student-domain]
+        school[school-domain]
+        end
             
-            %% 정적 의존
-            student_app --> student_api
-            student_app --> school_api
-            student_app --> student
+        %% 정적 의존
+        student_app --> student_api
+        student_app --> school_api
+        student_app --> student
             
-            school_app --> school_api
-            school_app --> school
+        school_app --> school_api
+        school_app --> school
             
-            %% 어댑터 구현 및 HTTP 호출
-            student_school_rest_adapter --> student_app
-            student_school_rest_adapter -->|HTTP 요청| school_webmvc
-            school_webmvc --> school_app
+        %% 어댑터 구현 및 HTTP 호출
+        student_school_rest_adapter --> student_app
+        student_school_rest_adapter -->|HTTP 요청| school_webmvc
+        school_webmvc --> school_app
             
-            %% 도메인과 API 연결
-            student_api --> student
-            school_api --> school
+        %% 도메인과 API 연결
+        student_api --> student
+        school_api --> school
             
-            %% ❌ 순환 참조 방지 주석
-            student_app -. "❌ school-application 직접 의존 금지" .-> school_app
-            school_app -. "❌ student-application 직접 의존 금지" .-> student_app
+        %% ❌ 순환 참조 방지 주석
+        student_app -. "❌ school-application 직접 의존 금지" .-> school_app
+        school_app -. "❌ student-application 직접 의존 금지" .-> student_app
 
-          ```
+        ```
     - 🔁 도메인 간 협력은 RestClient 어댑터를 통해 명확하게 구분 
       - 각 도메인의 핵심 로직(application)은 자신이 필요한 외부 기능을 Port Interface로 정의하고, 구현은 외부 어댑터에 위임합니다.
